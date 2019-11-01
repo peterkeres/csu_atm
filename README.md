@@ -15,7 +15,7 @@ in order to do this, you have to run the code from the command line. This will m
 
 ### key files to interact with
 
-###### 98% of the code we will now interact with will be under the ‘Atm/’ sub directory.
+##### 98% of the code we will now interact with will be under the ‘Atm/’ sub directory.
 
 
 - Models.py file:
