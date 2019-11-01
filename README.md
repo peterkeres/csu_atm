@@ -1,11 +1,11 @@
 # csu_atm
-this is the ATM project for software eng
+This is the ATM project for software eng
 
 ## **following notes will be for the devs**
 
 
-### to run the code
-in order to do this, you have to run the code from the command line. This will make a server that you can access. The server is only accessible on your ‘local host’, meaning you can't access it over the network. From the command line, go to the directory that has the top level ‘manage.py’ file. From here, run **"python3 manage.py runserver"**. Open a web browser and go to http://127.0.0.1:8000/Atm. This will take you to the homepage of the Atm app. If you want to go to the admin page ( to mess with the database directly) go to http://127.0.0.1:8000/admin
+### Running the code
+In order to do this, you have to run the code from the command line. This will make a server that you can access. The server is only accessible on your ‘local host’, meaning you can't access it over the network. From the command line, go to the directory that has the top level ‘manage.py’ file. From here, run **"python3 manage.py runserver"**. Open a web browser and go to http://127.0.0.1:8000/Atm. This will take you to the homepage of the Atm app. If you want to go to the admin page ( to mess with the database directly) go to http://127.0.0.1:8000/admin
 
 
 ### Admin login
@@ -13,7 +13,7 @@ in order to do this, you have to run the code from the command line. This will m
 - Password is: 12345
 
 
-### key files to interact with
+### Key files to interact with
 
 ##### 98% of the code we will now interact with will be under the ‘Atm/’ sub directory.
 
