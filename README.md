@@ -6,3 +6,4 @@ testing connection
 
 
 added stuff only to peter
+lets say iwant to add this to my main , what happens
