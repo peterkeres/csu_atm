@@ -4,7 +4,7 @@ CRYPTOCODERS
 this file creats all the tables that are used by the atm app for the databases
 
 each class is the table, with fields being set within the class
-Test er fuckererrrr
+
 follow the 'class digram pdf' to see a modle view of the tables
 '''
 
