@@ -29,3 +29,14 @@ def home(request):
     context = {'amount' : number}
     template = loader.get_template('Atm/home.html')
     return HttpResponse(template.render(context, request))
+
+
+def withdrawal(request):
+    '''
+    This is the function that allows the user to withdraw money from the Account
+    '''
+    user =  Account_Extension.objects.filter(user=request.user)
+    context = {
+    "set":user
+    }
+    return render (request, "withdrawal", context)
