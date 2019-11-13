@@ -13,7 +13,14 @@ if any data needs to be sent to the html file, it can be handled here
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
+from rest_framework.views import APIView
+from rest_framework import generics
 
+
+
+#Views are created
+from atm.models import Transaction
+from transaction.serializers import TransactionSerializer
 
 
 '''
@@ -29,14 +36,3 @@ def home(request):
     context = {'amount' : number}
     template = loader.get_template('Atm/home.html')
     return HttpResponse(template.render(context, request))
-
-
-def withdrawal(request):
-    '''
-    This is the function that allows the user to withdraw money from the Account
-    '''
-    user =  Account_Extension.objects.filter(user=request.user)
-    context = {
-    "set":user
-    }
-    return render (request, "withdrawal", context)
