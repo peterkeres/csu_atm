@@ -36,3 +36,9 @@ def home(request):
     context = {'amount' : number}
     template = loader.get_template('Atm/home.html')
     return HttpResponse(template.render(context, request))
+
+def balance(request):
+    number = balance
+    context = {'Balance' : balance}
+    template = loader.get_template('Atm/balance.html')
+    return render(request, 'Atm/balance.html', context)
