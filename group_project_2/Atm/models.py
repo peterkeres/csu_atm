@@ -96,3 +96,26 @@ class Atm_Machine_Refill(models.Model):
 
     def __self__(self):
         return "Refill id is: " + str(self.id) + " / date: " + str(self.refill_date)
+
+
+
+'''
+
+'''
+class Transaction(models.Model):
+    #transaction id = self.id | is default buid into the modles
+    card_id = models.ForeignKey('Atm_Card', on_delete = models.PROTECT)
+    time = models.DateTimeField(null = True)
+    atm_id = models.ForeignKey('Atm_Machine', on_delete = models.PROTECT)
+
+    status_choices = [ ("Complete","Complete") , ("Incomplete","Incomplete") ]
+    status = models.CharField(max_length = 10, default = "Incomplete", choices = status_choices)
+
+    responce_code = models.CharField(max_length = 4)
+
+    # add typs of transactions here
+    transaction_choices = [ ("NA","NA") , ("Phone Change","Phone Change") , ("Pin Change","Pin Change") , ("Cash Withdrawal", "Cash Withdrawal") , ("Cash Trasnsfer","Cash Trasnsfer") , ("Balance Enquiry","Balance Enquiry")]
+    transaction_type = models.CharField(max_length = 15, default = "NA", choices = transaction_choices)
+
+    def __self__(self):
+        return "Transaction id is: " + str(self.id) + " | date: " + str(self.date) + " | time: " + str(self.time)
