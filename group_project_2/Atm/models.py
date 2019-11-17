@@ -13,6 +13,7 @@ from django.db import models
 from .tasks import *
 from django.utils import timezone
 from project_template.settings import Bank_Account_Seed
+from django import forms
 
 import string
 import random
