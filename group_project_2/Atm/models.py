@@ -46,7 +46,7 @@ class Atm_Card(models.Model):
     account_number = models.ForeignKey('Account_Extension', on_delete = models.PROTECT)
     pin = models.CharField(max_length = 4)
     name = models.CharField(max_length = 200)
-    date_issued = models.DateField(null = True, auto_now_add = True)
+    date_issued = models.DateField(null = True) #auto_now_add = True)
     data_expire = models.DateField(null = True)
     address = models.CharField(max_length = 200, default = "NA")
 
@@ -80,3 +80,19 @@ class Atm_Machine(models.Model):
 
     def __str__(self):
         return "Atm id is: " + str(self.id) + " / location : " + str(self.location) + " / status : " + str(self.status)
+
+
+'''
+
+'''
+class Atm_Machine_Refill(models.Model):
+    #Atm_machine_refill_ id = self.id | is defualt build into the Models
+    atm_id = models.ForeignKey('Atm_Machine', on_delete = models.PROTECT)
+    amount = models.DecimalField(max_digits=19, decimal_places = 2)
+    atm_branch =  models.CharField(max_length = 200, default = "NA")
+    refill_date = models.DateField(null = True) #, auto_now_add = True)
+    #TODO: get value of blanace from the atm that is in another table
+    #previous_balance =
+
+    def __self__(self):
+        return "Refill id is: " + str(self.id) + " / date: " + str(self.refill_date)
