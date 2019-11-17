@@ -59,3 +59,24 @@ class Atm_Card(models.Model):
 
     def __str__(self):
         return "Atm card number is : " + str(self.id)
+
+
+
+'''
+
+'''
+class Atm_Machine(models.Model):
+    #Atm_Machine_id = self.id | is defualt build into the Models
+    current_balance = models.DecimalField(max_digits=19, decimal_places = 2, default = 0.00)
+    location = models.CharField(max_length = 200, default = "NA")
+    minimum_balance = models.DecimalField(max_digits = 19, decimal_places = 2, default = 1000.00)
+
+    status_choices = [ ("Active","Active") , ("Inactive","Inactive") ]
+    status = models.CharField(max_length = 10, default = "Active", choices = status_choices)
+
+    last_refill_date = models.DateField(null = True)
+    next_maintenance_date = models.DateField(null = True)
+
+
+    def __str__(self):
+        return "Atm id is: " + str(self.id) + " / location : " + str(self.location) + " / status : " + str(self.status)
