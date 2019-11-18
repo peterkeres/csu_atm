@@ -33,7 +33,7 @@ class Account_Extension(models.Model):
     name = models.CharField(max_length = 200)
     phone_number = models.CharField(max_length = 15)
     balance = models.DecimalField(max_digits=19, decimal_places = 2)
-    accountNum = models.CharField(max_length=12, onlyOne=True)
+    accountNum = models.CharField(max_length=12)
     cvv = models.CharField(max_length=3)
 
     created_at = models.DateTimeField(default=timezone.now)
