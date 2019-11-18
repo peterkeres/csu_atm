@@ -139,7 +139,7 @@ class Transaction(models.Model):
 
         try:
             accountRecipient = Account_Extension.get(number=self.account_numberRecipient)
-        except models.Model.DoesNotExist
+        except models.Model.DoesNotExist:
             accountRecipient = None
 
         if accountSender:
