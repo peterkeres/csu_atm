@@ -14,6 +14,7 @@ from django.db import models
 from django.utils import timezone
 #from project_template.settings import Bank_Account_Seed
 #from django import forms
+from django.utils import signals
 
 import string
 import random
