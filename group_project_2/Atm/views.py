@@ -10,9 +10,10 @@ if any data needs to be sent to the html file, it can be handled here
 
 
 
-from django.shortcuts import render
+#from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
 
 
@@ -32,17 +33,17 @@ def home(request):
     '''
     number = 10
     context = {'amount' : number}
-    template = loader.get_template('Atm/home.html')
-    return HttpResponse(template.render(context, request))
+    template = loader.get_template('home.html')
+    return redirect(template.render(context, request))
 
 def transfer(request):
     transfer = amount
     context = {'Transfer' : transfer}
-    template = loader.get_template('Atm/transfer.html')
-    return HttpResponse(template.render(context, request))
+    template = loader.get_template('transfer.html')
+    return redirect(template.render(context, request))
 
 def balance(request):
     your_balance = balance
     context = {'balance' : balance}
-    template = loader.get_template('Atm/balance.html')
-    return HttpResponse(template.render(context, request))
+    template = loader.get_template('balance.html')
+    return redirect(template.render(context, request))
