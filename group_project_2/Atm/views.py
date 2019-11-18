@@ -40,10 +40,10 @@ def transfer(request):
     transfer = amount
     context = {'Transfer' : transfer}
     template = loader.get_template('transfer.html')
-    return redirect(template.render(context, request))
+    return HttpReponse(template.render(context, request))
 
 def balance(request):
     your_balance = balance
-    context = {'balance' : balance}
+    context = {'balance' : your_balance}
     template = loader.get_template('balance.html')
-    return redirect(template.render(context, request))
+    return HttpResponse(template.render(context, request))
