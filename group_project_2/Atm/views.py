@@ -18,7 +18,7 @@ from django.http import HttpResponse
 
 
 #Views are created
-from atm.models import Transaction
+from Atm.models import Transaction
 
 
 '''
