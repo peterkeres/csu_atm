@@ -35,11 +35,12 @@ def home(request):
     template = loader.get_template('Atm/home.html')
     return HttpResponse(template.render(context, request))
 
-def balance(request):
-    number = balance
-    context = {'Balance' : balance}
-    template = loader.get_template('Atm/balance.html')
-    return render(request, 'Atm/balance.html', context)
+def transfer(request):
+    transfer = amount 
+    context = {'Transfer' : transfer_amount}
+    template = loader.get_template('Atm/transfer.html')
+    return HttpResponse(template.render(context, request))
+
 def user_balance(request):
     your_balance = balance
     #template = loader.get_template('Atm/balance.html')
