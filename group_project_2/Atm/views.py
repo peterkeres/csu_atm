@@ -40,7 +40,7 @@ def home(request):
 
 def transfer(request):
     transfer_amount = Account_Extension(
-    self.balance
+    balance = getBalance
     )
     context = {'transfer_amount' : transfer_amount}
     template = loader.get_template('Atm/transfer.html')
