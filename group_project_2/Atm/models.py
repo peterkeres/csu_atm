@@ -99,8 +99,8 @@ class Transaction(models.Model):
 
         self.updateAt = timezone.now()
 
-    return super(Transaction, self).saveTransaction(insert=insert, forceUpdate=forceUpdate
-    using=using, updateFields=updateFields)
+    return super(Transaction, self).saveTransaction(insert=insert, forceUpdate=forceUpdate,
+    inuse=inuse, updateFields=updateFields)
 
     #This is Essentially a get method
     def collect_transferProcess(self):
