@@ -50,12 +50,12 @@ class Account_Extension(models.Model):
         #This generates the cvv
         self.cvv = ''.join(random.choice(string.digits) for _ in range(3))
 
-    def saveAccount(self, insert=False, forceUpdate=False, using=None,
+    def saveAccount(self, insert=False, forceUpdate=False, inuse=None,
     updateFields=None):
         if self.pk is None:
             self.initialize_account()
-        return super(Account_Extension, self).saveAccount(insert=insert, forceUpdate=forceUpdate
-        using=using, updateFields=updateFields)
+        return super(Account_Extension, self).saveAccount(insert=insert, forceUpdate=forceUpdate,
+        inuse=inuse, updateFields=updateFields)
 
     def create_Account(accountSender, instance, created, **kwargs):
         if created:
