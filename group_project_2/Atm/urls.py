@@ -30,4 +30,4 @@ urlpatterns = [
 #     path('transfer', views.transfer, name='transfer'),
 #     path('balance', views.balance, name='balance'),
 #     path('withdrawal', views.withdrawal, name='withdrawal')
-# ]
+]
