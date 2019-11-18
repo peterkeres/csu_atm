@@ -94,10 +94,10 @@ class Transaction(models.Model):
 
 
     #Here is where you save the transaction
-    def saveTransaction(self, insert=False, forceUpdate=False, using=None,
+    def saveTransaction(self, insert=False, forceUpdate=False, inuse=None,
     updateFields=None):
 
-    self.updateAt = timezone.now()
+        self.updateAt = timezone.now()
 
     return super(Transaction, self).saveTransaction(insert=insert, forceUpdate=forceUpdate
     using=using, updateFields=updateFields)
