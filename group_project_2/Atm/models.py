@@ -143,7 +143,7 @@ class Transaction(models.Model):
             accountRecipient = None
 
         if accountSender:
-            if accountSender.balance < self.amount
+            if accountSender.balance < self.amount:
                 raise Exception ("You are unable to make this Transaction due to insufficient funds")
             accountSender.balance = accountSender.balance - self.amount
             accountSender.save()
