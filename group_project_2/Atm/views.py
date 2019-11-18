@@ -36,8 +36,10 @@ def home(request):
     template = loader.get_template('Atm/home.html')
     return HttpResponse(template.render(context, request))
 
-def transfer(request, question_id):
-    return HttpResponse("You are looking at the transfer page" %question_id)
+def transfer(request):
+    transfer_amount = 10
+    context = {'transfer_amount' : transfer_amount}
+    template = loader.get_template('Atm/transfer.html')
 
 # def transfer(request):
 #     transfer = 10
