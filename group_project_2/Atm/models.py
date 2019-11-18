@@ -28,18 +28,25 @@ class Account_Extension(models.Model):
     phone_number = models.CharField(max_length = 15)
     balance = models.DecimalField(max_digits=19, decimal_places = 2)
 
-    '''
-    CRYPTOCODERS
 
-    this is us overriding the to-string method.
-    how each record wil be displayed.
-    '''
     def __str__(self):
         return "Account number is : " + str(self.id) + " | Owner is : " + self.name
 
 
 '''
+CRYPTOCODERS
 
+this table holds infor on each atm card in the system
+holds:
+    pk is the card number
+    account number is the id of the account
+    pin the pin used for the card
+    name is the name that is on the card
+    date issued is the data the card was created
+    date expire is the date the card will exipre
+    address is the address that is tied to the card
+    two factor status is if the card is set up for two factor
+    card status is if the card is active or not
 '''
 class Atm_Card(models.Model):
     #atm_account_number = self.id | is defualt build into the modles
@@ -63,7 +70,16 @@ class Atm_Card(models.Model):
 
 
 '''
+CRYPTOCODERS
 
+this table holds information about the ATM machine
+holds:
+    current balance is the balance that is on the machine
+    location is where the macine is located
+    min balance is how much must be in the machine at all times
+    status is if the machine is working or not
+    last refill is when the machine was last refilled
+    next next_maintenance_date is when the next time maintenance should be done on the machine
 '''
 class Atm_Machine(models.Model):
     #Atm_Machine_id = self.id | is defualt build into the Models
@@ -83,7 +99,14 @@ class Atm_Machine(models.Model):
 
 
 '''
+CRYPTOCODERS
 
+this holds info on the refill event of the atm
+holds:
+    atm id is the id of the atm that is being refilled
+    amount is the amount that was placed inot the atm
+    amt branch is the what bank branch this atm belongs too
+    refill date is the date that the refilled event happened
 '''
 class Atm_Machine_Refill(models.Model):
     #Atm_machine_refill_ id = self.id | is defualt build into the Models
@@ -100,7 +123,16 @@ class Atm_Machine_Refill(models.Model):
 
 
 '''
+CRYPTOCODERS
 
+holds any transactions that happen
+holds:
+    card id is the id of the card that is used in the transaction
+    time is the time the transaction happened
+    atm id is the id of the atm that is being used
+    status is if the transaction is completed or not
+    responce_code is the code for this transactionq
+    transaction type holds what transaction this was 
 '''
 class Transaction(models.Model):
     #transaction id = self.id | is default buid into the modles
