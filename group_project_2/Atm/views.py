@@ -37,13 +37,13 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 def transfer(request):
-    transfer = amount
+    transfer = 10
     context = {'Transfer' : transfer}
     template = loader.get_template('transfer.html')
     return HttpReponse(template.render(context, request))
 
 def balance(request):
-    your_balance = balance
+    your_balance = 10
     context = {'your_balance' : your_balance}
     template = loader.get_template('balance.html')
     return HttpResponse(template.render(context, request))
