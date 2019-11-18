@@ -39,9 +39,7 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 def transfer(request):
-    transfer_amount = Account_Extension(
-    balance = getBalance
-    )
+    balance_list = Account_Extension.objects.all()
     context = {'transfer_amount' : transfer_amount}
     template = loader.get_template('Atm/transfer.html')
     return HttpResponse(template.render(context, request))
@@ -53,9 +51,7 @@ def transfer(request):
 #     return HttpResponse(template.render(context, request))
 
 def balance_page(request):
-    account = Account_Extension(
-    balance = getBalance
-    )
+    balance_list = Account_Extension.objects.all()
     context = {'your_balance' : balance}
     template = loader.get_template('Atm/balance.html')
     return HttpResponse(template.render(context, request))
