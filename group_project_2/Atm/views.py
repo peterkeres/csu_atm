@@ -40,7 +40,7 @@ def transfer(request):
     transfer = 10
     context = {'Transfer' : transfer}
     template = loader.get_template('Atm/transfer.html')
-    return HttpReponse(template.render(context, request))
+    return HttpResponse(template.render(context, request))
 
 def balance(request):
     your_balance = 10
