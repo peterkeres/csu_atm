@@ -52,7 +52,7 @@ def transfer(request):
 
 def balance_page(request):
     account = Account_Extension(
-    balance = 10
+    balance = 10,
     name = 'Darian Thomas'
     )
     context = {'your_balance' : your_balance}
