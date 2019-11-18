@@ -52,6 +52,6 @@ def transfer(request):
 
 def balance_page(request):
     balance_list = Account_Extension.objects.all()
-    context = {'your_balance' : balance}
+    context = {'accounts' : balance_list}
     template = loader.get_template('Atm/balance.html')
     return HttpResponse(template.render(context, request))
