@@ -32,7 +32,7 @@ def home(request):
     return HttpResponse("Hello, world. You're at the home page for the Atm app!")
     '''
     number = 10
-    context = {'amount' : number}
+    context = {'number' : number}
     template = loader.get_template('home.html')
     return HttpResponse(template.render(context, request))
 
@@ -44,6 +44,6 @@ def transfer(request):
 
 def balance(request):
     your_balance = balance
-    context = {'balance' : your_balance}
+    context = {'your_balance' : your_balance}
     template = loader.get_template('/balance.html')
     return HttpResponse(template.render(context, request))
