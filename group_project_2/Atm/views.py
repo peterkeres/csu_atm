@@ -52,9 +52,9 @@ def transfer(request):
 
 def balance_page(request):
     account = Account_Extension(
-    balance = 10,
+    balance = self.balance,
     name = 'Darian Thomas'
     )
-    context = {'your_balance' : your_balance}
+    context = {'your_balance' : balance}
     template = loader.get_template('Atm/balance.html')
     return HttpResponse(template.render(context, request))
