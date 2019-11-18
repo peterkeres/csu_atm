@@ -37,7 +37,7 @@ class Account_Extension(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
-    def __init__(self, name, phone_number, balance = 0, accountNum, cvv):
+    def __init__(self, name, phone_number, balance, accountNum, cvv):
         self.name = name
         self.phone_number = phone_number
         self.balance = balance
