@@ -10,10 +10,7 @@ follow the 'class digram pdf' to see a modle view of the tables
 
 
 from django.db import models
-#from .tasks import *
 from django.utils import timezone
-#from project_template.settings import Bank_Account_Seed
-#from django import forms
 from django.utils import signals
 
 import string
@@ -43,10 +40,7 @@ class Account_Extension(models.Model):
 
     def initialize_account(self):
         #This generates the account number
-        prev_acc_num = Account_Extension.objects.aggregate(max=Max('number'))['max']
-        if not prev_acc_num:
-            prev_acc_num = Bank_Account_Seed
-        self.number = str(int(prev_acc_num) + 1).zfill(12)
+        self.accountNum = ''.join(random.choices(string.digits) for _ in range (8))
 
         #This generates the cvv
         self.cvv = ''.join(random.choice(string.digits) for _ in range(3))
@@ -147,12 +141,12 @@ class Transaction(models.Model):
             if accountSender.balance < self.amount:
                 raise Exception ("You are unable to make this Transaction due to insufficient funds")
             accountSender.balance = accountSender.balance - self.amount
-            accountSender.save()
+            accountSender.saveTransaction()
 
         if accountRecipient:
             accountRecipient = accountRecipient.balance + self.amount
             print("You funds have been successfully transfered to " + accountRecipient)
-            accountRecipient.save()
+            accountRecipient.saveTransaction()
 
         self.status = 3
         return self
