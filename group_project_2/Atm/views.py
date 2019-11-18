@@ -43,5 +43,6 @@ def transfer(request):
 
 def balance(request):
     your_balance = balance
-    #template = loader.get_template('Atm/balance.html')
-    return render(request, 'Atm/balance.html', {"Balance" : Balance} )
+    context = {'balance' : balance}
+    template = loader.get_template('Atm/balance.html')
+    return HttpResponse(template.render(context, request))
