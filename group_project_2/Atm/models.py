@@ -72,7 +72,7 @@ transfer_processStatus = (0, 'Initiated'), (1, 'Did not go through')
     #recieving transactions
 class Transaction(models.Model):
     account_numberRecipient = models.CharField(max_length=12)
-    account_numberSender = models.Charfield(max_length=12)
+    account_numberSender = models.CharField(max_length=12)
     amount = models.DecimalField(max_digits=20, decial_places=2)
     status = models.IntegerField(choices=transaction_Statuses, default=0)
 
