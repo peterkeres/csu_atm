@@ -64,9 +64,9 @@ class Account_Extension(models.Model):
 transaction_Statuses = (0, 'Initiated'), (1, 'Declined')
 (2, 'Aborted'), (3, 'Invalid')
 
-transfer_processStatus = ( (0, 'Initiated'), (1, 'Did not go through')
+transfer_processStatus = (0, 'Initiated'), (1, 'Did not go through')
 (2, 'Successful'), (3, 'Invalid')
-)
+
 
     #Transaction class where it holds information for users sending and
     #recieving transactions
