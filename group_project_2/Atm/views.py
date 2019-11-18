@@ -19,7 +19,8 @@ from django.shortcuts import render, redirect
 
 
 #Views are created
-from Atm.models import Atm
+from Atm.models import Transaction
+from Atm.models import Account_Extension
 
 
 
@@ -50,7 +51,7 @@ def transfer(request):
 #     return HttpResponse(template.render(context, request))
 
 def balance_page(request):
-    your_balance = balance
+    your_balance = 10
     context = {'your_balance' : your_balance}
     template = loader.get_template('Atm/balance.html')
     return HttpResponse(template.render(context, request))
