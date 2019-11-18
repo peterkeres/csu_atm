@@ -36,12 +36,12 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 def transfer(request):
-    transfer = amount 
-    context = {'Transfer' : transfer_amount}
+    transfer = amount
+    context = {'Transfer' : transfer}
     template = loader.get_template('Atm/transfer.html')
     return HttpResponse(template.render(context, request))
 
-def user_balance(request):
+def balance(request):
     your_balance = balance
     #template = loader.get_template('Atm/balance.html')
     return render(request, 'Atm/balance.html', {"Balance" : Balance} )
