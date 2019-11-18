@@ -38,11 +38,11 @@ def home(request):
 def transfer(request):
     transfer = amount
     context = {'Transfer' : transfer}
-    template = loader.get_template('Atm/transfer.html')
+    template = loader.get_template('transfer.html')
     return HttpResponse(template.render(context, request))
 
 def balance(request):
     your_balance = balance
     context = {'balance' : balance}
-    template = loader.get_template('Atm/balance.html')
+    template = loader.get_template('balance.html')
     return HttpResponse(template.render(context, request))
