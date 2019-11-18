@@ -12,8 +12,8 @@ follow the 'class digram pdf' to see a modle view of the tables
 from django.db import models
 #from .tasks import *
 from django.utils import timezone
-from project_template.settings import Bank_Account_Seed
-from django import forms
+#from project_template.settings import Bank_Account_Seed
+#from django import forms
 
 import string
 import random
