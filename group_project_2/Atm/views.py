@@ -19,8 +19,8 @@ from django.shortcuts import render, redirect
 
 
 #Views are created
-from Atm.models import Transaction
-from Atm.models import Account_Extension
+from Atm.models import Atm
+
 
 
 '''
