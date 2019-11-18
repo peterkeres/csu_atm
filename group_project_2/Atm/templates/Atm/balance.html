@@ -2,5 +2,8 @@
 this will be the hmtl layout for the 'balance' page  -->
 
 
-    <p> The following number is your balance </p>
-    <p> Your balance is: {{Balance}}</p>
+<form action="/your_balance" method="post">
+  <label for="the_balance">Your current balance is: </lable>
+  <input id="the_balance" type="number" name="yourbalance" value="{{your_balance}}">
+  <ipnut type="submit" value="OK">
+</form>
