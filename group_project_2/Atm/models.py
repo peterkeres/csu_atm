@@ -33,6 +33,7 @@ class Account_Extension(models.Model):
     balance = models.DecimalField(max_digits=19, decimal_places = 2)
     accountNum = models.CharField(max_length=12)
     cvv = models.CharField(max_length=3)
+    otherAccount = models.CharField(max_length=12)
 
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
@@ -43,6 +44,7 @@ class Account_Extension(models.Model):
         self.balance = balance
         self.accountNum = accountNum
         self.cvv = cvv
+        self.otherAccount = otherAccount
 
     def getName(self):
         return self.name
@@ -58,6 +60,9 @@ class Account_Extension(models.Model):
 
     def getCvv(self):
         return self.cvv
+
+    def getOtherAccount(self):
+        return self.otherAccount
 
     def withdraw(self, amount):
         if self.balance < amount:
