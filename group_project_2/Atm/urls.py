@@ -24,7 +24,7 @@ to disply the hmtl file for that page.
 for each new page, you have to add the path here
 '''
 urlpatterns = [
-    path('home', views.home, name='home'),
+    path('', views.home, name='home'),
     path('balance', views.balance, name='balance'),
     path('transfer', views.transfer, name='transfer')
 #     path('transfer', views.transfer, name='transfer'),
