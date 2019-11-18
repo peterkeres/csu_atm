@@ -11,7 +11,7 @@ follow the 'class digram pdf' to see a modle view of the tables
 
 from django.db import models
 from django.utils import timezone
-from django.utils import signals
+
 
 import string
 import random
@@ -51,14 +51,6 @@ class Account_Extension(models.Model):
             self.initialize_account()
         return super(Account_Extension, self).saveAccount(insert=insert, forceUpdate=forceUpdate,
         inuse=inuse, updateFields=updateFields)
-
-    def create_Account(accountSender, instance, created, **kwargs):
-        if created:
-            acc = Account_Extension(user=instance)
-            acc.saveAccount()
-            create_pdf.delay(acc.id)
-
-    signals.post_save.connect(create_Account, accountSender=User)
 
     '''
     CRYPTOCODERS
