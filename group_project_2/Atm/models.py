@@ -62,7 +62,7 @@ class Account_Extension(models.Model):
     def withdraw(self, amount):
         if self.balance < amount:
             return "Insufficient funds"
-        else
+        else:
             self.balance -= amount
 
     def balanceInq(self):
@@ -71,8 +71,8 @@ class Account_Extension(models.Model):
     def transferAccount(self, amount):
         if self.balance < amount:
             return "Insufficient funds"
-        else
-            self.balance += amount 
+        else:
+            self.balance += amount
 
 
 
