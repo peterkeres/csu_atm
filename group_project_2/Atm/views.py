@@ -13,14 +13,12 @@ if any data needs to be sent to the html file, it can be handled here
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
-from rest_framework.views import APIView
-from rest_framework import generics
+
 
 
 
 #Views are created
 from atm.models import Transaction
-from transaction.serializers import TransactionSerializer
 
 
 '''
