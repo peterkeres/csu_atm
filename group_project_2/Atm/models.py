@@ -99,7 +99,7 @@ class Transaction(models.Model):
 
         self.updateAt = timezone.now()
 
-    return super(Transaction, self).saveTransaction(insert=insert, forceUpdate=forceUpdate,
+        return super(Transaction, self).saveTransaction(insert=insert, forceUpdate=forceUpdate,
     inuse=inuse, updateFields=updateFields)
 
     #This is Essentially a get method
