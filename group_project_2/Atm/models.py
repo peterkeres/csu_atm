@@ -99,8 +99,6 @@ class Account_Extension(models.Model):
     this is us overriding the to-string method.
     how each record wil be displayed.
     '''
-    def __unicode__(self):
-        return self.
 
 transaction_Statuses = (0, 'Initiated'), (1, 'Declined')
 (2, 'Aborted'), (3, 'Invalid')
