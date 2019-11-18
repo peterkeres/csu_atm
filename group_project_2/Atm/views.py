@@ -12,7 +12,7 @@ if any data needs to be sent to the html file, it can be handled here
 
 #from django.shortcuts import render
 from django.template import loader
-from django.http import HttpResponse
+#from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 
