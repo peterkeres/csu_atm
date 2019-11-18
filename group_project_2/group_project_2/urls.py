@@ -25,6 +25,6 @@ when adding a new app, make sure to add top level here and tie it to the apps ur
 '''
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Atm/', include('Atm.urls'))
+    path('Atm/', include('Atm.urls')),
     path('Atm/transfer', include('Atm.urls'))
 ]
