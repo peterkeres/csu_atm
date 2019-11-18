@@ -39,7 +39,9 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 def transfer(request):
-    transfer_amount = 10
+    transfer_amount = Account_Extension(
+    self.balance
+    )
     context = {'transfer_amount' : transfer_amount}
     template = loader.get_template('Atm/transfer.html')
     return HttpResponse(template.render(context, request))

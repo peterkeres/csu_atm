@@ -37,20 +37,61 @@ class Account_Extension(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
+    def __init__(self, name, phone_number, balance = 0, accountNum, cvv):
+        self.name = name
+        self.phone_number = phone_number
+        self.balance = balance
+        self.accountNum = accountNum
+        self.cvv = cvv
 
-    def initialize_account(self):
-        #This generates the account number
-        self.accountNum = ''.join(random.choices(string.digits) for _ in range (8))
+    def getName(self):
+        return self.name
 
-        #This generates the cvv
-        self.cvv = ''.join(random.choice(string.digits) for _ in range(3))
+    def getPhoneNumber(self):
+        return self.phone_number
 
-    def saveAccount(self, insert=False, forceUpdate=False, inuse=None,
-    updateFields=None):
-        if self.pk is None:
-            self.initialize_account()
-        return super(Account_Extension, self).saveAccount(insert=insert, forceUpdate=forceUpdate,
-        inuse=inuse, updateFields=updateFields)
+    def getBalance(self):
+        return self.balance
+
+    def getAccountNum(self):
+        return self.accountNum
+
+    def getCvv(self):
+        return self.cvv
+
+    def withdraw(self, amount):
+        if self.balance < amount:
+            return "Insufficient funds"
+        else
+            self.balance -= amount
+
+    def balanceInq(self):
+        return self.balance
+
+    def transferAccount(self, amount):
+        if self.balance < amount:
+            return "Insufficient funds"
+        else
+            self.balance += amount 
+
+
+
+    # def initialize_account(self):
+    #     #This generates the account number
+    #     self.accountNum = ''.join(random.choices(string.digits) for _ in range (8))
+    #
+    #     #This generates the cvv
+    #     self.cvv = ''.join(random.choice(string.digits) for _ in range(3))
+    #
+    #     #This generates balance
+    #     self.balance = ''.join(random.choice(max_digits) for _ in range
+    #
+    # def saveAccount(self, insert=False, forceUpdate=False, inuse=None,
+    # updateFields=None):
+    #     if self.pk is None:
+    #         self.initialize_account()
+    #     return super(Account_Extension, self).saveAccount(insert=insert, forceUpdate=forceUpdate,
+    #     inuse=inuse, updateFields=updateFields)
 
     '''
     CRYPTOCODERS
@@ -58,8 +99,8 @@ class Account_Extension(models.Model):
     this is us overriding the to-string method.
     how each record wil be displayed.
     '''
-    def __str__(self):
-        return str(self.id) + " : " + self.name
+    def __unicode__(self):
+        return self.
 
 transaction_Statuses = (0, 'Initiated'), (1, 'Declined')
 (2, 'Aborted'), (3, 'Invalid')
