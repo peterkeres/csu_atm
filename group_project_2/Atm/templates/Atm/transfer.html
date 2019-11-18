@@ -3,4 +3,9 @@ this will be the hmtl layout for the 'transfer' page  -->
 
 <html lang="en">
 
-<form>
+<form action="127.0.0.1.8000/Atm/confirmation" method="post">
+  <h1> Welcome {{account_list.name}}!!</h1>
+  <p> You have {{account_list.balance}} in your account. </p>
+  <label for="your-transfer">How much would you like to transfer?: </label>
+  <input id="your-transfer", type="number" name="your_transfer" value="{{account_list.amount}}">
+  <input type="submit" value="Ok">
