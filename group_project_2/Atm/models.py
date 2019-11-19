@@ -32,8 +32,6 @@ class Account_Extension(models.Model):
     phone_number = models.CharField(max_length = 12)
     balance = models.DecimalField(max_digits=20, decimal_places = 2)
 
-    '''
-    CRYPTOCODERS
 
     This is the toString method. This format is used for all classes
     '''
@@ -43,7 +41,7 @@ class Account_Extension(models.Model):
 '''
 CRYPTOCODERS
 ATM Class
-Address field serves as the primary key. 
+Address field serves as the primary key.
 This assumes only one ATM at a particular address
 '''
 class ATM(models.Model):
@@ -78,7 +76,7 @@ class Add_New_ATM_Card(models.Model):
     address = models.CharField(max_length = 200, default = "")
     balance = models.CharField(max_length = 20, default = '0')
     phone_number = models.CharField(max_length = 10, default = "")
-    
+
     CARD_STATUS_CHOICES = [("Active", "Active"), ("Inactive", "Inactive")]
     card_status = models.CharField(max_length = 10, default = "Inactive", choices = CARD_STATUS_CHOICES)
 
@@ -95,7 +93,7 @@ CRYPTOCODERS
 View ATM status
 The primary key is the ATM address, which is also a
 foreign key from the ATM table.
-This ensures that only one status object exists 
+This ensures that only one status object exists
 for each ATM in the system.
 '''
 class View_ATM_Status(models.Model):
@@ -108,7 +106,7 @@ class View_ATM_Status(models.Model):
     last_refill = models.DateTimeField(default = datetime.now)
     next_refill = models.DateField(default = datetime.now)
     balance = models.DecimalField( max_digits = 20, decimal_places = 2)
-    
+
     def __str__(self):
         return str(self.ATM_address) + " | Status: " + self.ATM_status + " | Next refill: " + str(self.next_refill)
 
@@ -162,5 +160,3 @@ class Transaction(models.Model):
 
     def __self__(self):
         return "Transaction ID: " + str(self.id) + " | date: " + str(self.date) + " | time: " + str(self.time)
-    
-
