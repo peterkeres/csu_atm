@@ -32,7 +32,7 @@ class Account_Extension(models.Model):
     phone_number = models.CharField(max_length = 12)
     balance = models.DecimalField(max_digits=20, decimal_places = 2)
 
-
+    '''
     This is the toString method. This format is used for all classes
     '''
     def __str__(self):
