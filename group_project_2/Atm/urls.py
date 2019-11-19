@@ -14,7 +14,7 @@ from django.urls import path
 from . import views
 
 # CRYPTOCODERS name of the app, used for shortcuts in making links in html code
-app_name = 'Atm'
+app_name = 'ATM'
 
 '''
 CRYPTOCODERS
